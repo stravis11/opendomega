@@ -67,6 +67,7 @@
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
+            align-items: center;
         }
         
         .filters select {
@@ -75,6 +76,22 @@
             border-radius: 4px;
             background: white;
             font-size: 1rem;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #2b6cb0;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
         }
         
         .video-grid {
@@ -235,6 +252,7 @@
     
     <main>
         <div class="filters">
+            <input type="text" id="search-box" class="search-box" placeholder="🔍 Search bills, topics, people...">
             <select id="filter-year">
                 <option value="">All Years</option>
             </select>
@@ -354,12 +372,24 @@
         }
         
         function filterVideos() {
+            const search = document.getElementById('search-box').value.toLowerCase().trim();
             const year = document.getElementById('filter-year').value;
             const chamber = document.getElementById('filter-chamber').value;
             const type = document.getElementById('filter-type').value;
             
             let filtered = allVideos;
             
+            if (search) {
+                filtered = filtered.filter(v => {
+                    const searchText = [
+                        v.title || '',
+                        v.summary || '',
+                        v.chamber || '',
+                        v.video_date || ''
+                    ].join(' ').toLowerCase();
+                    return searchText.includes(search);
+                });
+            }
             if (year) {
                 filtered = filtered.filter(v => v.session_year == year);
             }
@@ -373,7 +403,17 @@
             renderVideos(filtered);
         }
         
+        // Debounce function for search
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+        
         // Event listeners
+        document.getElementById('search-box').addEventListener('input', debounce(filterVideos, 300));
         document.getElementById('filter-year').addEventListener('change', filterVideos);
         document.getElementById('filter-chamber').addEventListener('change', filterVideos);
         document.getElementById('filter-type').addEventListener('change', filterVideos);
