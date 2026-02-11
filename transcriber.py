@@ -59,23 +59,30 @@ def download_audio(video_id: str, url: str, output_dir: Path) -> Optional[Path]:
         print(f"  Audio already exists: {output_path}")
         return output_path
     
+    # Strip timestamp from URL (e.g., ?t=1172) - it can cause issues
+    clean_url = url.split('?')[0] if '?' in url else url
+    
     print(f"  Downloading audio...")
     cmd = [
         "yt-dlp",
-        "-f", "140",  # 128kbps m4a
+        "-f", "bestaudio[ext=m4a]/bestaudio/140",  # Flexible format selection
         "-o", str(output_path),
         "--no-playlist",
-        url
+        "--retries", "3",  # Retry on failure
+        "--fragment-retries", "3",
+        "--socket-timeout", "30",  # 30s socket timeout
+        clean_url
     ]
     
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        # Increased timeout: 30 min for longer videos (~175MB at slow speeds)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
         if result.returncode != 0:
-            print(f"  Download error: {result.stderr[:200]}")
+            print(f"  Download error: {result.stderr[:500]}")
             return None
         return output_path
     except subprocess.TimeoutExpired:
-        print("  Download timed out")
+        print("  Download timed out (>30 min)")
         return None
 
 
@@ -174,7 +181,7 @@ def main():
     parser.add_argument("--batch", type=int, default=1, help="Videos per run")
     parser.add_argument("--continuous", action="store_true", help="Keep running")
     parser.add_argument("--model", default="base", help="Whisper model (tiny/base/small/medium)")
-    parser.add_argument("--delay", type=int, default=10, help="Delay between videos")
+    parser.add_argument("--delay", type=int, default=30, help="Delay between videos (default 30s to avoid rate limiting)")
     
     args = parser.parse_args()
     
