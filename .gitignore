@@ -1,0 +1,30 @@
+# Audio files (large)
+audio/
+*.m4a
+*.mp3
+*.wav
+
+# Test files
+test_*.txt
+test_*.m4a
+test_*.json
+test_*.srt
+test_*.tsv
+test_*.vtt
+
+# Database (contains local state)
+legislature.db
+
+# Transcripts (can be regenerated)
+transcripts/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Vercel
+.vercel/
+
+# OS
+.DS_Store

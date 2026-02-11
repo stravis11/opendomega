@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenDomeGA - Georgia Legislature Video Summaries</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filters select {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            font-size: 1rem;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .video-header {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.125rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .badge-house {
+            background: #c53030;
+            color: white;
+        }
+        
+        .badge-senate {
+            background: #2b6cb0;
+            color: white;
+        }
+        
+        .video-summary {
+            padding: 1rem;
+            font-size: 0.875rem;
+            color: #444;
+            max-height: 300px;
+            overflow-y: auto;
+            line-height: 1.5;
+        }
+        
+        .video-summary h2 {
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            color: #1a365d;
+            display: none; /* Hide the title since it's in the header */
+        }
+        
+        .video-summary h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.75rem 0 0.25rem 0;
+            color: #2c5282;
+        }
+        
+        .video-summary p {
+            margin: 0.25rem 0;
+        }
+        
+        .video-summary ul {
+            margin: 0.25rem 0 0.5rem 1.25rem;
+            padding: 0;
+        }
+        
+        .video-summary li {
+            margin: 0.2rem 0;
+        }
+        
+        .video-summary strong {
+            color: #1a365d;
+        }
+        
+        .video-footer {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .video-footer a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .video-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏛️ OpenDomeGA</h1>
+        <p>AI-generated summaries of Georgia House and Senate floor sessions</p>
+        <div class="stats" id="stats">
+            <div class="stat">
+                <div class="stat-value" id="stat-total">-</div>
+                <div class="stat-label">Total Videos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-summarized">-</div>
+                <div class="stat-label">Summarized</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-years">-</div>
+                <div class="stat-label">Years Covered</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="filters">
+            <select id="filter-year">
+                <option value="">All Years</option>
+            </select>
+            <select id="filter-chamber">
+                <option value="">All Chambers</option>
+                <option value="house">House</option>
+                <option value="senate">Senate</option>
+            </select>
+            <select id="filter-type">
+                <option value="">All Types</option>
+                <option value="regular">Floor Sessions</option>
+                <option value="committee">Committee</option>
+                <option value="press">Press Conferences</option>
+            </select>
+        </div>
+        
+        <div id="video-list" class="video-grid">
+            <div class="loading">Loading summaries...</div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Data sourced from official Georgia General Assembly archives</p>
+        <p>Last updated: <span id="last-updated">-</span></p>
+    </footer>
+    
+    <script>
+        let allVideos = [];
+        
+        async function loadData() {
+            try {
+                // Load stats
+                const statsRes = await fetch('data/stats.json');
+                if (statsRes.ok) {
+                    const stats = await statsRes.json();
+                    document.getElementById('stat-total').textContent = stats.total_videos;
+                    document.getElementById('stat-summarized').textContent = stats.summarized;
+                    document.getElementById('stat-years').textContent = 
+                        stats.year_range ? `${stats.year_range[0]}-${stats.year_range[1]}` : '-';
+                    document.getElementById('last-updated').textContent = 
+                        stats.last_updated ? new Date(stats.last_updated).toLocaleDateString() : '-';
+                    
+                    // Populate year filter
+                    if (stats.year_range) {
+                        const yearSelect = document.getElementById('filter-year');
+                        for (let y = stats.year_range[1]; y >= stats.year_range[0]; y--) {
+                            const opt = document.createElement('option');
+                            opt.value = y;
+                            opt.textContent = y;
+                            yearSelect.appendChild(opt);
+                        }
+                    }
+                }
+                
+                // Load videos
+                const videosRes = await fetch('data/videos.json');
+                if (videosRes.ok) {
+                    allVideos = await videosRes.json();
+                    renderVideos(allVideos);
+                } else {
+                    document.getElementById('video-list').innerHTML = 
+                        '<div class="no-data">No summaries available yet. Check back soon!</div>';
+                }
+            } catch (err) {
+                console.error('Error loading data:', err);
+                document.getElementById('video-list').innerHTML = 
+                    '<div class="no-data">No summaries available yet. Check back soon!</div>';
+            }
+        }
+        
+        function formatMarkdown(text) {
+            if (!text) return 'Summary not yet available.';
+            
+            return text
+                // Headers
+                .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+                .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                // Bold
+                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                // Lists
+                .replace(/^- (.+)$/gm, '<li>$1</li>')
+                // Wrap consecutive <li> in <ul>
+                .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+                // Paragraphs (lines that aren't already wrapped)
+                .replace(/^(?!<[hul]|<li)(.+)$/gm, '<p>$1</p>')
+                // Clean up empty paragraphs
+                .replace(/<p>\s*<\/p>/g, '');
+        }
+        
+        function renderVideos(videos) {
+            const container = document.getElementById('video-list');
+            
+            if (!videos || videos.length === 0) {
+                container.innerHTML = '<div class="no-data">No videos match your filters.</div>';
+                return;
+            }
+            
+            container.innerHTML = videos.map(video => `
+                <div class="video-card">
+                    <div class="video-header">
+                        <div class="video-title">${video.title || 'Untitled'}</div>
+                        <div class="video-meta">
+                            <span class="badge badge-${video.chamber || 'house'}">${video.chamber || 'unknown'}</span>
+                            <span>${video.video_date || ''}</span>
+                            <span>${video.duration_minutes || 0} min</span>
+                        </div>
+                    </div>
+                    <div class="video-summary">
+                        ${formatMarkdown(video.summary)}
+                    </div>
+                    <div class="video-footer">
+                        <a href="${video.url}" target="_blank">Watch on YouTube →</a>
+                        <span>Day ${video.day_number || '-'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function filterVideos() {
+            const year = document.getElementById('filter-year').value;
+            const chamber = document.getElementById('filter-chamber').value;
+            const type = document.getElementById('filter-type').value;
+            
+            let filtered = allVideos;
+            
+            if (year) {
+                filtered = filtered.filter(v => v.session_year == year);
+            }
+            if (chamber) {
+                filtered = filtered.filter(v => v.chamber === chamber);
+            }
+            if (type) {
+                filtered = filtered.filter(v => v.session_type === type);
+            }
+            
+            renderVideos(filtered);
+        }
+        
+        // Event listeners
+        document.getElementById('filter-year').addEventListener('change', filterVideos);
+        document.getElementById('filter-chamber').addEventListener('change', filterVideos);
+        document.getElementById('filter-type').addEventListener('change', filterVideos);
+        
+        // Load data on page load
+        loadData();
+    </script>
+</body>
+</html>
