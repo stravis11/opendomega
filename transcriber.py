@@ -59,10 +59,13 @@ def download_audio(video_id: str, url: str, output_dir: Path) -> Optional[Path]:
         print(f"  Audio already exists: {output_path}")
         return output_path
     
-    # Strip timestamp from URL (e.g., ?t=1172) - it can cause issues
-    clean_url = url.split('?')[0] if '?' in url else url
+    # Strip only timestamp parameter from URL (e.g., &t=1172) - keep the video ID
+    # YouTube URLs are like: youtube.com/watch?v=VIDEO_ID or youtube.com/watch?v=VIDEO_ID&t=123
+    import re
+    clean_url = re.sub(r'[&?]t=\d+', '', url)  # Remove &t=123 or ?t=123
     
     print(f"  Downloading audio...")
+    print(f"  URL: {clean_url}")
     cmd = [
         "yt-dlp",
         "-f", "bestaudio[ext=m4a]/bestaudio/140",  # Flexible format selection
@@ -73,13 +76,31 @@ def download_audio(video_id: str, url: str, output_dir: Path) -> Optional[Path]:
         "--socket-timeout", "30",  # 30s socket timeout
         clean_url
     ]
+    print(f"  Command: {' '.join(cmd)}")
     
     try:
         # Increased timeout: 30 min for longer videos (~175MB at slow speeds)
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+        print(f"  yt-dlp return code: {result.returncode}")
+        if result.stdout:
+            print(f"  yt-dlp stdout (last 200): ...{result.stdout[-200:]}")
+        if result.stderr:
+            print(f"  yt-dlp stderr: {result.stderr[:500]}")
+        
         if result.returncode != 0:
-            print(f"  Download error: {result.stderr[:500]}")
+            print(f"  Download error!")
             return None
+        
+        # Check what files were actually created
+        print(f"  Files in output dir: {list(output_dir.iterdir())}")
+        if not output_path.exists():
+            # Try to find any audio file
+            audio_files = list(output_dir.glob(f"{video_id}.*"))
+            print(f"  Looking for {video_id}.*: {audio_files}")
+            if audio_files:
+                output_path = audio_files[0]
+                print(f"  Using: {output_path}")
+        
         return output_path
     except subprocess.TimeoutExpired:
         print("  Download timed out (>30 min)")
@@ -103,15 +124,27 @@ def transcribe_audio(audio_path: Path, model: str = "base") -> Optional[str]:
         ]
         
         try:
+            print(f"  Running: {' '.join(cmd[:8])}...")
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=7200)
+            print(f"  Whisper return code: {result.returncode}")
+            if result.stdout:
+                print(f"  Stdout (last 200): ...{result.stdout[-200:]}")
+            if result.stderr:
+                print(f"  Stderr (last 200): ...{result.stderr[-200:]}")
+            
             if result.returncode != 0:
-                print(f"  Transcription error: {result.stderr[:200]}")
+                print(f"  Transcription error (code {result.returncode}): {result.stderr[:500]}")
                 return None
             
             # Find output file
             txt_files = list(Path(tmpdir).glob("*.txt"))
+            print(f"  Found {len(txt_files)} output files in {tmpdir}")
             if txt_files:
-                return txt_files[0].read_text()
+                content = txt_files[0].read_text()
+                print(f"  Transcript length: {len(content)} chars")
+                return content
+            else:
+                print(f"  No txt files found! Files in dir: {list(Path(tmpdir).iterdir())}")
             return None
         except subprocess.TimeoutExpired:
             print("  Transcription timed out (>2 hours)")
