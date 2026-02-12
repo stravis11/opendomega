@@ -180,10 +180,11 @@ def process_video(db, video: Dict[str, Any], worker: str, model: str = "base") -
     if duration:
         print(f"  Duration: {duration//60} minutes")
     
-    # Skip very long videos (> 4 hours)
-    if duration > 14400:
-        print(f"  Skipping: too long ({duration//3600}h)")
-        db.set_error(video_id, f"Video too long: {duration//3600}h")
+    # Skip very long videos (> 90 min) - Whisper struggles with long audio on limited RAM
+    MAX_DURATION = 5400  # 90 minutes
+    if duration > MAX_DURATION:
+        print(f"  Skipping: too long ({duration//60} min, max {MAX_DURATION//60})")
+        db.set_error(video_id, f"Video too long: {duration//60}min (max {MAX_DURATION//60})")
         return False
     
     # Create temp directory for audio

@@ -15,8 +15,11 @@ test_*.vtt
 # Database (contains local state)
 legislature.db
 
-# Transcripts (can be regenerated)
-transcripts/
+# Transcripts (raw working files - can be regenerated)
+/transcripts/
+
+# Keep web/data/transcripts for download (negate ignore)
+!web/data/transcripts/
 
 # Python
 __pycache__/

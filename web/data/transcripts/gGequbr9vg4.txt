@@ -1,0 +1,220 @@
+Georgia Legislature Video Transcript
+=====================================
+Title: AI, Kids, and the Future of Tech in Georgia | Lawmakers 2026
+Date: None
+Chamber: None
+Video: https://www.youtube.com/watch?v=gGequbr9vg4
+
+TRANSCRIPT
+----------
+Technological innovations speed up faster than many of us can keep up. Our state is helping
+to keep things moving. According to the Georgia Department of Economic Development, Georgia
+is proudly at the forefront of digital health, cyber security, thin tech, and creative
+technology. Now, that's great for Georgians in the workforce, but as technology grows,
+There's a need to create laws that protect Jordan's and joining me are Republican Representative
+Todd Jones of South Versailles.
+He chairs the House Committee on Technology and Infrastructure Innovation and Democratic
+Senator Sally Harrell of Atlanta.
+Her committees include government oversight.
+She also co-chaired a Senate study committee on social media AI and children over the past
+few months.
+Welcome to lawmakers to both of you.
+I'm glad to have you here.
+I'm going to start with you, Chairman Jones.
+Give us a general picture of the types of innovation
+that your committee will look at technology,
+this coming session.
+Look, Donna, for over a decade,
+we've been the number one place to do business.
+We're now shifting to becoming the most innovative place
+to do business in the entire country.
+We're going to take leadership in places like mobility
+in terms of air taxis, in terms of autonomous vehicles.
+We're going to take those folks that have been,
+in a sense, stuck in their home because of disability,
+because of old age, and we're going to help them get out,
+visa VAV, we're going to bring traffic off into the air, we're going to go ahead and use
+a creative manufacturing, a lot of people call that 3D printing, to absolutely expand
+everything that we can print or in a sense of manufacturer here in Georgia and for outside
+of our state.
+In other words, we're going to take literally what AI can do, what human beings can do,
+robotics can do, and transform education, healthcare, transportation, just about everything
+that a Georgian touches is going to be transformed in the next five to ten years.
+and you'll need to put guardrails on that.
+We are gonna have to put guardrails on it,
+but I'll tell you this, on the innovation side,
+we wanna make sure that this is very similar
+to the third industrial revolution,
+we're in the fifth industrial revolution,
+when Carnegie and Rockefeller and Edison,
+when they were making those changes
+and they were giving those great innovations in steam
+and electricity, there wasn't a lot of guardrails
+on them on the innovation side.
+We wanna do the same thing.
+We wanna give our innovators a chance
+to innovate and really change the game
+economically, healthcare and education.
+Now, I know you have done a lot with urban transportation.
+We'll get to that in a moment.
+Senator Harrell, I want to actually start with you
+with the committee we talked about,
+and play a clip of a DeCab County mother
+who talked at one of the final ones.
+She testified before your committee on October 10th.
+Her name is Kay Fullerton,
+and she described how her fourth grader and his friends
+found an AI chat box, but with a Hunger Games theme.
+And they started to have a conversation with it because they're kids and curious and that quickly descended into sexualized content on the school network in fourth grade.
+And this wasn't blocked because of the nature of the website services like chat GPT have these developer tools that allow developers to access these large language models for fractions of a penny with no oversight on where that content goes after it's produced by the model.
+model.
+Yeah.
+And Senator Harold, one of her concerns is, parents can't preview what these bots are doing.
+So there's no way of monitoring any of that.
+So talk a little bit about that.
+That's right.
+This parent came to me during session last year and told me this story.
+And I immediately tried to find a bill to amend because it was late in the session so that
+we could fix this issue.
+Unfortunately, the bill didn't pass.
+And so that's when I really pushed to have this study committee.
+This issue is personal for me, my kids were like in middle school when everybody started
+getting smart phones.
+And I could see that these programs on these phones were fundamentally changing my children.
+And I tried to sound the alarm and no one would hear me.
+And so I've waited eight, ten years to be able to do something about it.
+Now we have enough millennials who have had kids who were scared about the phone and what
+it can do to their children that we have enough collective voices that we can do something
+about it.
+I want to clarify something, they watched at school, and there are, there's a way they
+block things, but they were able to get through.
+Right, because this is new, these AI companion chatbots are new, and so the companies that
+help the school's monitor what kids can access, they were on top of it, and so this just
+slip through. Now, Ms. Fullerton did say that the school responded really, really well
+and took care of the problem. But this technology, it changes so quickly that schools can't keep up,
+parents can't keep up. So in the end, we made our committee made several recommendations that we
+are turning into legislation now. Okay, we're going to talk about those in a minute. I want to
+get back to you. Going back and forth, you certainly agree with all of that. And I've heard that
+There are members of your party who certainly agree that there needs to be some kind, something happening
+when it comes to these chat box and things like that.
+100%.
+Look, we're seeing basically data telling us that upwards of 75% of 15 year-olders in our state consider their AI chatbot their best friend.
+They're best friend.
+We have to find a way to get that socialization to be fundamentally different.
+We got to put the guardrails on, but frankly we need to help of 11 million Georgians.
+look, legislation can create that guardrail, but we need the parents, we need the grandparents,
+the uncles, the aunts, and everyone else to understand this is changing and it's changing
+monthly.
+It's changing daily, so all of us need to be super diligent in terms of what we're doing
+and what we're doing with our children.
+And I know that's hard.
+I got four children, and I know how hard that is to do, but between the guardrails that
+we can put on with my colleague in the Senate and what we can also do to work with 11 million
+Georgians, I think we can make a difference.
+Talk a little bit about what you're expecting to do
+with some legislation.
+Right, so what we've realized is that these big tech companies
+have discovered through the years that the more engaged
+they keep the users, the longer they keep them
+on the phone or the iPad, the more money they make,
+selling information to advertisers.
+So they're making money off of our kids' attention
+And they're doing that now by designing the platforms
+and the products to be addictive,
+designing things in where if you do something,
+they give you something back, they give you a reward
+that gives a little dose of dopamine
+that makes you feel good.
+So the first thing we want to do is regulate
+the addictive design.
+We don't want addictive products designed
+for our children.
+The second thing we want to do is address the chatbot,
+the companion chatbot issue.
+This is critical.
+This is going to make the situation so much worse.
+Children are using these chatbots
+and becoming friends with these chatbots.
+And the parents, they don't know yet
+that their children are interacting with these chatbots.
+We had parents who told horrible stories
+about the chatbot actually telling the child
+to kill himself, to commit suicide.
+I listened to that, it was just terrifying.
+It's awful.
+No parent knows what this chatbot is going to say to their child.
+So two, those parents out there, I would tell you,
+find out if your children are using companion chatbots,
+if they are, please teach them about the dangers.
+We want to hold these companies accountable.
+If a parent bought a doll and the doll said,
+kill yourself, that company would be liable
+because they had a product, just like cars.
+Cars have to study safety measures
+before they bring out a new model.
+We want these companies to be responsible for the products
+they put out in the harms that they cause
+in terms of AI chatbots.
+And then finally, we want to give parents more power.
+So the parental controls, they're very difficult to use.
+And parents are frustrated.
+And the kids find their ways around them.
+So we're supporting something called the App Store
+Accountability Act, which when a parent buys a phone
+for a child, the phone is linked to the parent's phone.
+If a child tries to download an app,
+a notification is sent to the parent,
+and the parent can decide whether to approve the app
+or not, that's easier than parental controls.
+And then the very last thing we're doing,
+last year we passed a law banning cell phones
+in schools K through eight.
+I believe we are gonna come back and add high schools.
+And I know that they're talking about that
+both in the Senate and certainly in the House.
+That's going to happen.
+So that's good.
+I want to get back to you about something.
+While we still have time, I know that when it comes to the
+air taxis, something special is going to happen in 2026.
+And you've been working on this for a long time.
+For a long time, knock wood.
+We're going to get special permission to be able to land
+an air taxi right in the middle of the Georgia World
+Congress Center at the kickoff.
+And I don't mean that as a pun at the kickoff of the
+World Cup.
+And this is literally the world looking at us.
+millions of people looking at Atlanta and being able to land an air taxi and simultaneously
+bringing up an autonomous vehicle and hopefully having the FIFA head, our governor, our speaker
+and our lieutenant governor going into a 3D printed mini house because we want to show that
+affordable housing can be done, it can be done in our state and we can do it through a
+creative manufacturing.
+So we're going to go ahead and put all together basically an entire portfolio of innovation
+for the world to see that George is leading the way.
+So they're going to start at this, at this bear, bear report, bear, bear up in the North
+Bolton, right?
+The governor and all of these officials are going to go to the Georgia World Congress
+Center and then there's going to be this house there.
+That is our hope and we're hoping to get the final approvals on that and any of you
+who know anyone at the FAA would like to be able to get that from them.
+And for people who don't understand, these, these taxis are going to go along the interstate
+and they'll be able to go to Hart's Field
+and different things like that.
+Yeah, look, imagine an idea
+where you're going to be able to go out to your ride share app
+and you're going to have a choice of,
+do you want to go autonomous, do you want to go driver
+or do you want to go in the air?
+And you're going to be able to go in the air
+and literally go from, say, the northern arc to Fox Theater,
+the northern arc into the airport.
+You name it, you're going to now have a defined commute time
+as opposed to guessing what your commute time
+is going to be based on traffic.
+And autonomous, let me see if anybody will be.
+Yeah, well, okay, so much to talk to you too about.
+Thank you so much for coming on.
+We'll keep up with these issues.
+Thank you so much.
+

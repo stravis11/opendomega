@@ -22,16 +22,21 @@ def get_db():
 
 
 def export_videos():
-    """Export all summarized videos to JSON"""
+    """Export all summarized videos to JSON with transcripts"""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    transcripts_dir = OUTPUT_DIR / "transcripts"
+    transcripts_dir.mkdir(exist_ok=True)
     
     sb = get_db()
     
-    # Get all videos with summaries
+    # Get all videos with summaries (include transcript)
     result = sb.table('legislature_videos').select('*').not_.is_('summary', 'null').order('session_year', desc=True).order('video_date', desc=True).execute()
     
     videos = []
+    search_index = []
+    
     for row in result.data:
+        transcript = row.get('transcript', '')
         video = {
             'video_id': row['video_id'],
             'url': row['url'],
@@ -43,19 +48,62 @@ def export_videos():
             'video_date': row.get('video_date'),
             'duration_minutes': (row.get('duration_seconds') or 0) // 60,
             'summary': row['summary'],
+            'has_transcript': bool(transcript),
             'updated_at': row.get('updated_at'),
         }
         videos.append(video)
+        
+        # Create downloadable transcript .txt file
+        if transcript:
+            txt_content = f"""Georgia Legislature Video Transcript
+=====================================
+Title: {row['title']}
+Date: {row.get('video_date', 'Unknown')}
+Chamber: {row.get('chamber', 'Unknown')}
+Video: {row['url']}
+
+TRANSCRIPT
+----------
+{transcript}
+"""
+            with open(transcripts_dir / f"{row['video_id']}.txt", "w") as f:
+                f.write(txt_content)
+        
+        # Add to search index (title + summary + first 2000 chars of transcript)
+        search_text = f"{row['title']} {row['summary']} {transcript[:2000] if transcript else ''}"
+        search_index.append({
+            'video_id': row['video_id'],
+            'title': row['title'],
+            'text': search_text.lower()  # lowercase for easier matching
+        })
     
-    # Write main index
+    # Write main index (without full transcripts to keep it small)
     with open(OUTPUT_DIR / "videos.json", "w") as f:
         json.dump(videos, f, indent=2)
     
-    # Write individual video files
-    for video in videos:
-        video_file = OUTPUT_DIR / f"{video['video_id']}.json"
+    # Write search index
+    with open(OUTPUT_DIR / "search_index.json", "w") as f:
+        json.dump(search_index, f)
+    
+    # Write individual video files (with full transcript)
+    for row in result.data:
+        video_data = {
+            'video_id': row['video_id'],
+            'url': row['url'],
+            'title': row['title'],
+            'chamber': row.get('chamber'),
+            'session_type': row.get('session_type'),
+            'session_year': row.get('session_year'),
+            'day_number': row.get('day_number'),
+            'video_date': row.get('video_date'),
+            'duration_minutes': (row.get('duration_seconds') or 0) // 60,
+            'summary': row['summary'],
+            'transcript': row.get('transcript', ''),
+            'updated_at': row.get('updated_at'),
+        }
+        video_file = OUTPUT_DIR / f"{row['video_id']}.json"
         with open(video_file, "w") as f:
-            json.dump(video, f, indent=2)
+            json.dump(video_data, f, indent=2)
     
     # Get stats
     all_videos = sb.table('legislature_videos').select('status, session_year').execute()
