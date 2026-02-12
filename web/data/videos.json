@@ -14,6 +14,34 @@
     "updated_at": "2026-02-12T12:18:40.99512+00:00"
   },
   {
+    "video_id": "jg04DXqy0qw",
+    "url": "https://www.youtube.com/watch?v=jg04DXqy0qw",
+    "title": "3/21/23 - Committee on Ethics",
+    "chamber": null,
+    "session_type": "committee",
+    "session_year": 2026,
+    "day_number": null,
+    "video_date": null,
+    "duration_minutes": 2,
+    "summary": "Overview:\nThe Georgia legislature's Committee on Ethics met on 3/21/23 and approved three new caucus applications with no notable debate or opposition.\n\nKey Actions:\nNo bills were passed or referred.\n\nBills Introduced (First Reading):\nNone detected.\n\nNotable Moments:\n- The committee chair opened with a brief prayer.\n- The chair noted the presence of a quorum and proceeded to the sole agenda item.\n- The committee unanimously approved caucus applications for the International Caucus, HBCU Caucus, and American Irish State Legislators Caucus.\n\nVotes:\nThe committee unanimously approved the three caucus applications.\n\nAttendance:\nThe chair noted the presence of a quorum.\n\nAdjournment:\nThe committee adjourned after completing its sole agenda item.",
+    "has_transcript": true,
+    "updated_at": "2026-02-12T03:20:25.127553+00:00"
+  },
+  {
+    "video_id": "GYfvfeXUCCs",
+    "url": "https://www.youtube.com/watch?v=GYfvfeXUCCs",
+    "title": "3/20/23 - Committee on Finance",
+    "chamber": null,
+    "session_type": "committee",
+    "session_year": 2026,
+    "day_number": null,
+    "video_date": null,
+    "duration_minutes": 89,
+    "summary": "Here is a structured markdown summary of the key points from the Georgia 3/20/23 - Committee on Finance session transcript:\n\n## Overview\nThe session covered several pieces of legislation, including HB 170, SB 153, and HB 504. There was discussion around the rural hospital tax credit and public school tax credit provisions. The committee made some amendments to the bills and advanced them.\n\n## Key Actions\n**HB 504**: Included a hospital tax credit provision and a $5 million public school foundation tax credit, while repealing the Perry on Sunset provision by December 31, 2026.\n**HB 170**: Passed unanimously out of committee.\n\n## Bills Introduced (First Reading)\nNone noted in the transcript.\n\n## Notable Moments\n- Discussion around the need for the rural hospital tax credit going forward given improvements in Medicaid reimbursement.\n- Representative Hatchett had originally proposed a change to a free port provision, but withdrew it after a $300 million fiscal note was provided.\n\n## Votes\n- **HB 170**: Passed unanimously.\n- **HB 504**: Passed unanimously with amendments.\n\n## Attendance\nQuorum was present, as indicated by the unanimous votes.\n\n## Adjournment\nThe timing of adjournment was not specified. The next session date was also not provided.",
+    "has_transcript": true,
+    "updated_at": "2026-02-12T10:35:59.307039+00:00"
+  },
+  {
     "video_id": "FZ2JB2xOoBs",
     "url": "https://www.youtube.com/watch?v=FZ2JB2xOoBs",
     "title": "HBCU Press Conference 3/20/23",
@@ -1386,34 +1414,6 @@
     "updated_at": "2026-02-12T03:22:14.145193+00:00"
   },
   {
-    "video_id": "jg04DXqy0qw",
-    "url": "https://www.youtube.com/watch?v=jg04DXqy0qw",
-    "title": "3/21/23 - Committee on Ethics",
-    "chamber": null,
-    "session_type": "committee",
-    "session_year": 2026,
-    "day_number": null,
-    "video_date": null,
-    "duration_minutes": 2,
-    "summary": "Overview:\nThe Georgia legislature's Committee on Ethics met on 3/21/23 and approved three new caucus applications with no notable debate or opposition.\n\nKey Actions:\nNo bills were passed or referred.\n\nBills Introduced (First Reading):\nNone detected.\n\nNotable Moments:\n- The committee chair opened with a brief prayer.\n- The chair noted the presence of a quorum and proceeded to the sole agenda item.\n- The committee unanimously approved caucus applications for the International Caucus, HBCU Caucus, and American Irish State Legislators Caucus.\n\nVotes:\nThe committee unanimously approved the three caucus applications.\n\nAttendance:\nThe chair noted the presence of a quorum.\n\nAdjournment:\nThe committee adjourned after completing its sole agenda item.",
-    "has_transcript": true,
-    "updated_at": "2026-02-12T03:20:25.127553+00:00"
-  },
-  {
-    "video_id": "GYfvfeXUCCs",
-    "url": "https://www.youtube.com/watch?v=GYfvfeXUCCs",
-    "title": "3/20/23 - Committee on Finance",
-    "chamber": null,
-    "session_type": "committee",
-    "session_year": 2026,
-    "day_number": null,
-    "video_date": null,
-    "duration_minutes": 89,
-    "summary": "Here is a structured markdown summary of the key points from the Georgia 3/20/23 - Committee on Finance session transcript:\n\n## Overview\nThe session covered several pieces of legislation, including HB 170, SB 153, and HB 504. There was discussion around the rural hospital tax credit and public school tax credit provisions. The committee made some amendments to the bills and advanced them.\n\n## Key Actions\n**HB 504**: Included a hospital tax credit provision and a $5 million public school foundation tax credit, while repealing the Perry on Sunset provision by December 31, 2026.\n**HB 170**: Passed unanimously out of committee.\n\n## Bills Introduced (First Reading)\nNone noted in the transcript.\n\n## Notable Moments\n- Discussion around the need for the rural hospital tax credit going forward given improvements in Medicaid reimbursement.\n- Representative Hatchett had originally proposed a change to a free port provision, but withdrew it after a $300 million fiscal note was provided.\n\n## Votes\n- **HB 170**: Passed unanimously.\n- **HB 504**: Passed unanimously with amendments.\n\n## Attendance\nQuorum was present, as indicated by the unanimous votes.\n\n## Adjournment\nThe timing of adjournment was not specified. The next session date was also not provided.",
-    "has_transcript": true,
-    "updated_at": "2026-02-12T10:35:59.307039+00:00"
-  },
-  {
     "video_id": "ahqzlH7Z0xQ",
     "url": "https://youtu.be/ahqzlH7Z0xQ?t=1188",
     "title": "Georgia House - Day 2 (2026-11-30)",
@@ -1456,20 +1456,6 @@
     "updated_at": "2026-02-12T12:34:45.683565+00:00"
   },
   {
-    "video_id": "hYOSVeSF92Q",
-    "url": "https://youtu.be/hYOSVeSF92Q",
-    "title": "Georgia House - Day 13 (2026-11-19)",
-    "chamber": "house",
-    "session_type": "regular",
-    "session_year": 2026,
-    "day_number": 13,
-    "video_date": "2026-11-19",
-    "duration_minutes": 74,
-    "summary": "Here is a structured markdown summary of the Georgia House session transcript:\n\n# Georgia House - Day 13 (2026-11-19)\n\n## Overview\nThis was a routine legislative session with no major bills discussed or actions taken. The session focused on a devotional prayer and the Pledge of Allegiance.\n\n## Key Actions\nNo bills passed or referred.\n\n## Bills Introduced (First Reading)\nNone detected.\n\n## Notable Moments\n- Dr. Benny Tate, a pastor from Milner, Georgia, was introduced and delivered the devotional prayer, emphasizing the importance of gratitude and thanksgiving.\n\n## Votes\nNo recorded votes.\n\n## Attendance\nA quorum was present, with all members reporting to the floor.\n\n## Adjournment\nThe session adjourned after the Pledge of Allegiance. The next session is scheduled for the following day, November 20, 2026.",
-    "has_transcript": true,
-    "updated_at": "2026-02-12T12:36:30.65732+00:00"
-  },
-  {
     "video_id": "0XM4KBhJEi8",
     "url": "https://youtu.be/0XM4KBhJEi8",
     "title": "Georgia House - Day 13 (2026-11-19)",
@@ -1482,6 +1468,20 @@
     "summary": "# Georgia House - Day 13 (2026-11-19)\n\n## Overview\nThis session was relatively brief, with no substantive legislation being passed or introduced. The majority of the time was spent on procedural matters and brief remarks.\n\n## Key Actions\nNo bills were passed or referred during this session.\n\n## Bills Introduced (First Reading)\n- **SB 2EX**: Relating to the composition and number of congressional districts, and legislative and congressional reapportionment.\n\n## Notable Moments\nThe session consisted primarily of the House coming to order, the clerk reading the first reading of a Senate bill, and the House adjourning until the next scheduled session on November 20th at 9 AM.\n\n## Votes\nNo recorded votes were taken during this session.\n\n## Attendance\nA quorum was present, as the House was able to conduct business.\n\n## Adjournment\nThe House adjourned at the conclusion of the session and will reconvene on November 20th at 9 AM.",
     "has_transcript": true,
     "updated_at": "2026-02-12T12:37:12.410261+00:00"
+  },
+  {
+    "video_id": "hYOSVeSF92Q",
+    "url": "https://youtu.be/hYOSVeSF92Q",
+    "title": "Georgia House - Day 13 (2026-11-19)",
+    "chamber": "house",
+    "session_type": "regular",
+    "session_year": 2026,
+    "day_number": 13,
+    "video_date": "2026-11-19",
+    "duration_minutes": 74,
+    "summary": "Here is a structured markdown summary of the Georgia House session transcript:\n\n# Georgia House - Day 13 (2026-11-19)\n\n## Overview\nThis was a routine legislative session with no major bills discussed or actions taken. The session focused on a devotional prayer and the Pledge of Allegiance.\n\n## Key Actions\nNo bills passed or referred.\n\n## Bills Introduced (First Reading)\nNone detected.\n\n## Notable Moments\n- Dr. Benny Tate, a pastor from Milner, Georgia, was introduced and delivered the devotional prayer, emphasizing the importance of gratitude and thanksgiving.\n\n## Votes\nNo recorded votes.\n\n## Attendance\nA quorum was present, with all members reporting to the floor.\n\n## Adjournment\nThe session adjourned after the Pledge of Allegiance. The next session is scheduled for the following day, November 20, 2026.",
+    "has_transcript": true,
+    "updated_at": "2026-02-12T12:36:30.65732+00:00"
   },
   {
     "video_id": "EDw6m9BDiok",
@@ -1582,18 +1582,32 @@
     "updated_at": "2026-02-12T12:54:14.632304+00:00"
   },
   {
-    "video_id": "__j1Tuf4wKU",
-    "url": "https://youtu.be/__j1Tuf4wKU?t=1038",
-    "title": "Georgia House - Day 40 (2026-04-04)",
+    "video_id": "m1NcHfpUbXI",
+    "url": "https://youtu.be/m1NcHfpUbXI?t=3050",
+    "title": "Georgia House - Day 2 (2026-11-04)",
     "chamber": "house",
     "session_type": "regular",
     "session_year": 2026,
-    "day_number": 40,
-    "video_date": "2026-04-04",
-    "duration_minutes": 227,
-    "summary": "## Georgia House - Day 40 PM Session Part 2 (April 4, 2026)\n\n### Overview\nLate evening session completing the final day (Sine Die) of the 2026 Georgia legislative session.\n\n### Key Actions\n- Final passage of remaining conference committee reports\n- Last-minute amendments and bill reconciliations\n- Closing speeches and recognitions\n- Sine Die adjournment proceedings\n\n### Sine Die Traditions\n- Final recognitions of departing members\n- Thank you speeches to staff and leadership\n- Ceremonial closing of the session\n\n### Session Characteristics\n- Extended session pushing toward midnight deadline\n- Historic legislation finalized\n- 2026 session officially concluded\n\n### Notes\n- Marks end of 40-day legislative session\n- Members return to districts until next session",
+    "day_number": 2,
+    "video_date": "2026-11-04",
+    "duration_minutes": 80,
+    "summary": "Here is a structured markdown summary of the Georgia House session transcript:\n\n# Georgia House - Day 2 (2026-11-04) Session Highlights\n\n## Overview\nThe session focused on the importance of leaders taking time for personal reflection and prayer, especially during times of cultural and political divisions. There was no substantive legislative action detected.\n\n## Notable Moments\n- Rep. Can Trail introduced guest chaplain Matt Lawson, who spoke about the need for leaders to \"watch over their own souls\" through prayer and reflection.\n- Lawson discussed the current \"cultural convulsion\" in America, marked by distrust of institutions and a desire for political \"conquest\" over opponents rather than debate of ideas.\n- Lawson emphasized that in times of crisis, the people under a leader's care need them to maintain spiritual grounding through regular prayer and solitude, following the example of Jesus.\n\n## Attendance\nA quorum was present, with members being instructed to vote green to signify their attendance.\n\n## Adjournment\nThe session was recessed until 10:30 AM to allow members time to get COVID-19 tests, after which the day's business would commence.",
     "has_transcript": true,
-    "updated_at": "2026-02-11T21:09:10.800432+00:00"
+    "updated_at": "2026-02-12T12:55:39.647717+00:00"
+  },
+  {
+    "video_id": "Ac2XbPOYRJk",
+    "url": "https://youtu.be/Ac2XbPOYRJk?t=1494",
+    "title": "Georgia House - Day 1 (2026-11-03)",
+    "chamber": "house",
+    "session_type": "regular",
+    "session_year": 2026,
+    "day_number": 1,
+    "video_date": "2026-11-03",
+    "duration_minutes": 70,
+    "summary": "Here is a structured markdown summary of the Georgia House session:\n\n### Overview\nThe Georgia House of Representatives held a special session on November 3, 2021, focused on redistricting the state's legislative and congressional districts following the 2020 census. The session featured a prayer by Rep. Mack Jackson and the introduction of a resolution.\n\n### Key Actions\n**HR 2**: Resolution related to redistricting the state's legislative and congressional districts\n\n### Bills Introduced (First Reading)\nNone mentioned\n\n### Notable Moments\n- Rep. Mack Jackson gave the opening prayer, reflecting on the challenges of the past year and calling for wisdom and kindness among the representatives.\n- The Speaker of the House introduced Rep. Jackson and praised his character.\n\n### Votes\nNo recorded votes mentioned.\n\n### Attendance\nQuorum was present, with the doors locked to maintain order.\n\n### Adjournment\nThe transcript does not indicate when the session was adjourned. The next session date is not provided.",
+    "has_transcript": true,
+    "updated_at": "2026-02-12T12:57:15.291346+00:00"
   },
   {
     "video_id": "C-QrVR4LrRI",
@@ -1606,6 +1620,20 @@
     "video_date": "2026-04-04",
     "duration_minutes": 138,
     "summary": "## Georgia House - Day 40 AM Session (April 4, 2026)\n\n### Overview\nOpening morning session of the final day (Day 40) of the 2026 legislative session. Heavy focus on morning orders, recognitions, and beginning bill passage.\n\n### Key Legislation Passed\n- **HB 582**: Allows abuse victims to present evidence in defense; includes HB 384 defining police oath violations as felonies/high aggravated misdemeanors\n- **HB 266**: Major veterans tax relief - virtually eliminates state income tax on veteran retirement income; includes police foundation tax credits\n- **HR 7**: Road naming resolution honoring George A. Seat True Locke Jr. (amended to add HR 328 for Chief Jeffrey E. Turner I-75 dedication)\n\n### Morning Orders & Recognitions\n- **Pastor Jay Williams** (Chaplain): Reflected on significance of 40-day sessions, compared to biblical 40-day periods\n- **Rep. Stetson**: Thanked colleagues for support during cancer treatment; recognized new Macon County Sheriff Carlo Spelton\n- **Spelman College Glee Club**: Celebrated 100th anniversary\n- **Kindle Ray Johnson**: Recognized as youngest certified farmer in the USA\n- **Ocarian Dwight Perry Memorial**: Ice cream truck safety legislation (HR) in his memory\n\n### Announcements\n- Rules Committee meeting at 1:30 PM (Room 341)\n- Intergovernmental Coordination Committee in Room 406\n- First Annual Sine Die Block Party in Liberty Plaza (1-6 PM)\n\n### Session Notes\n- Final day atmosphere with celebrations and recognitions\n- Multiple family visitors in gallery for Sine Die",
+    "has_transcript": true,
+    "updated_at": "2026-02-11T21:09:10.800432+00:00"
+  },
+  {
+    "video_id": "__j1Tuf4wKU",
+    "url": "https://youtu.be/__j1Tuf4wKU?t=1038",
+    "title": "Georgia House - Day 40 (2026-04-04)",
+    "chamber": "house",
+    "session_type": "regular",
+    "session_year": 2026,
+    "day_number": 40,
+    "video_date": "2026-04-04",
+    "duration_minutes": 227,
+    "summary": "## Georgia House - Day 40 PM Session Part 2 (April 4, 2026)\n\n### Overview\nLate evening session completing the final day (Sine Die) of the 2026 Georgia legislative session.\n\n### Key Actions\n- Final passage of remaining conference committee reports\n- Last-minute amendments and bill reconciliations\n- Closing speeches and recognitions\n- Sine Die adjournment proceedings\n\n### Sine Die Traditions\n- Final recognitions of departing members\n- Thank you speeches to staff and leadership\n- Ceremonial closing of the session\n\n### Session Characteristics\n- Extended session pushing toward midnight deadline\n- Historic legislation finalized\n- 2026 session officially concluded\n\n### Notes\n- Marks end of 40-day legislative session\n- Members return to districts until next session",
     "has_transcript": true,
     "updated_at": "2026-02-11T21:09:10.800432+00:00"
   },
