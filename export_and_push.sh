@@ -17,7 +17,7 @@ fi
 
 # Commit and push
 git add -A
-SUMMARY_COUNT=$(grep -c '"status": "summarized"' web/data/videos.json 2>/dev/null || echo "?")
+SUMMARY_COUNT=$(python3 -c "import json; print(json.load(open('web/data/stats.json'))['summarized'])" 2>/dev/null || echo "?")
 git commit -m "Export: $SUMMARY_COUNT summarized"
 git push origin main
 
