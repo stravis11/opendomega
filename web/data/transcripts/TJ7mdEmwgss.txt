@@ -1,0 +1,300 @@
+Georgia Legislature Video Transcript
+=====================================
+Title: Georgia lawmakers push to regulate data centers
+Date: None
+Chamber: None
+Video: https://www.youtube.com/watch?v=TJ7mdEmwgss
+
+TRANSCRIPT
+----------
+For some, there's a lovehate
+relationship when it comes to
+technologies. There's love for what it
+provides with everything at our
+fingertips on a keyboard. But with the
+growth of AI, there's a backlash in
+communities when it comes to having data
+centers the size of football fields or
+bigger in their backyards. Georgia's one
+of the top data center markets in the
+nation. And joining me are two lawmakers
+looking to regulate data centers in
+Georgia. Republican Senator Chuck
+Huffstetler of Rome is chairman of the
+Senate Finance Committee. He's also an
+exeicio member of appropriations among
+his other committees. And also with us
+is Democratic Representative Debbie
+Buckner of Junction City. She's on House
+Appropriations and she's secretary of
+the House Rural Development Committee
+among all of her committees, too.
+Welcome to Lawmakers again this session.
+Great to be here again, Donna.
+>> Love to have you here. So, you both have
+bills on data centers and they're both
+bipartisan. They're your bills. They're
+a little different different. Before we
+get into the bills, I'd like to know
+what led you to even take on this topic
+and you know, I'll start with you,
+Representative Buckner.
+>> Well, um, last session there were about
+four proposals in one of my counties and
+they were it's a rural county and there
+were a lot of questions. How much water
+will they use? How much electricity will
+they use? Where will that come from?
+um who's going to be responsible for
+making sure that all the things that
+this data center needs can be provided
+and not hurt the existing customers, the
+people that live in the county. Now,
+>> so there were going to be four in just
+your county.
+>> There were four different entities
+looking at spots in one county.
+>> Wow. What led you to get into this?
+Well, I went back in 2017 and saw a data
+center in uh Nevada. And my bill was
+actually last year. It's a continuation
+of last year, Senate Bill 34 that said
+we want them to simply pay all their uh
+power costs, their electricity costs.
+We've had six rate increases in a couple
+of years. And I gave it to the PSC and
+they then came up with a rule that said,
+"We're going to make them pay all their
+cost." And Georgia Power agreed to it.
+And I said, "Well, then y'all like my
+bill?" It says exactly that. And they
+said, "Well, no, we don't like your
+bill." Uh, so it makes me wonder, too
+often those things are hidden behind
+trade secrets so that you don't really
+know who's paying for them. But, um,
+it's it's important that we codify into
+law that they pay all their costs. Our
+consumers have had way too many rate
+increases. I think we saw from the PSC
+elections in November, the consumers
+around the country were very unhappy,
+Republicans and Democrats both. And so
+we need to get protection for the
+consumers. We've we've got uh 60-year
+cost still for instance on plant Vogle.
+The gas turbines they're wanting to bill
+for the data centers are they're going
+to bill us for over 45 years. Who pays
+for that if they're gone a few years?
+Even the PSC staff said, "Yeah, the
+protection looks like it's there for a
+few years, but we don't know after
+that." So we need to protect our
+consumers. Our rates are in the top
+either fifth or highest rates in the
+country according to two different
+studies. We shouldn't be that way. The
+consumer shouldn't be getting all the
+cost.
+>> Yeah. So your bill it would do exactly
+do what
+>> it would say that all the cost
+transmission distribution substation any
+cost for the data centers could not be
+put on the consumer's bills. They have
+to pay all that cost. as it is right
+now. Too many of them only pay the
+operating cost and all the construction
+like Vogle cost a 25% increase on
+residential bills because they've got
+all the construction costs to pay for
+that for the next 60 years. Let the
+companies that are needing this
+additional electricity pay for it. And
+to that point in 2023 residential
+customers in Georgia bought less
+electricity from Georgia Power than they
+did in 2011. The demand's not coming
+from the residential customers. Why are
+they paying all the cost? Wow, that's
+that's interesting. We're going to get
+back to your bill a little bit more.
+Representative Buckner, your bill HB528
+deals with more transparency when it
+comes to data centers. Tell us about it.
+>> Well, we were really concerned in my
+part of the state about um telling us
+upfront what you're going to need. If
+you're going to come be a neighbor of
+ours, we want to be a good neighbor of
+yours and we want to know what how many
+gallons of water a day, how many
+megawatts. We wanted to know that
+upfront and and we've kind of made it be
+a carrot or stick kind of situation
+where you tell us that before you start
+applying for your permits and and um
+moving forward with your project and
+then that will mean that you will be
+eligible for whatever tax incentives
+there might be. If you don't tell us
+that upfront, then you're not eligible
+for those incentives. So, it gave some
+leverage to the local counties. Um we
+just felt like that was fair. it was
+fair to for them to provide the
+information. If if I invited you to
+dinner at my house, I'd want to know how
+many people were coming. I'd want to
+know if you had any allergies so I
+wouldn't cook the wrong thing. Well,
+that's the same kind of situation here
+for our counties. They need to know that
+they've got enough water to take care of
+the families that are counting on it
+right now, plus the data center if it's
+coming. They need to know about the
+power as well.
+>> Yeah. Let's let's talk about that water
+for a second. Some people don't
+understand why they need so much. It's a
+cooling.
+>> Right. Right. They use millions of
+gallons of water. And in the beginning
+when we I first learned about data
+centers, the um data centers were very
+consumptive. They used it, let it go.
+Used it and let it go. So it was
+consuming the water. Now since we've
+been putting in all these bills, we have
+more people saying, well, we can do a
+closed loop system where we're recycling
+that water and the water's used to cool
+down all of the equipment that's inside.
+It gets very hot and of course in the
+summer really hot. So they have to make
+sure that they keep it cool.
+>> So do we have any guarantees that will
+happen at this point?
+>> We could we could very easily say that
+they're all required to have a closed
+loop system that they were required to
+use gray water. We could say that they
+were required to to do all kinds of
+things. But we have not been doing that.
+And that's what's been a little bit
+concerning for local governing
+authorities, a lot of legislators
+because we've got about eight bills now
+I think on different things to do with
+data centers. So people are beginning to
+say, you know, maybe we need to slow
+down a minute and look at this and see
+what we need to do.
+>> Yeah. I think the interesting thing when
+they were first coming in, people would
+just see these huge spaces be buildings.
+They didn't really know what they were.
+They look like warehouses. So there's
+that part of it, too.
+>> And and I need to add, I am not opposed
+to data centers. They need to be built.
+Uh we simply want them to pay their
+taxes, uh pay their electricity cost.
+the the closed loop system. I've got a
+county in my district that's already
+requiring those. I would liken it to say
+your car radiator. You use the same
+water over and over again.
+>> So, um they they pay a tremendous amount
+of property taxes. They don't bring uh
+much revenue to the state. But we've
+also got an exemption that the finance
+committee has looked at today. One of
+them a bill by Democrat, one by
+Republican to eliminate those. That
+sales tax exemption they get is between
+the state and local money is about $3
+billion a year. You know, we collect 15
+billion in state income taxes. Three
+billion is a lot of money. And one of
+the things says if you and I go to
+Walmart and buy a laptop, we pay sales
+tax. But if you buy 15 million worth,
+you don't pay sales tax.
+>> We need to level the playing field for
+everybody.
+>> And they were given those tax breaks
+because it was looked at as an economic
+development arm, something to to bring
+people in. You don't think they need
+that anymore?
+>> No. And a University of Georgia study
+that I had done, I'd ordered it last
+April, came out and said at least 70% of
+them would come without any of that $3
+billion given to them that it's totally
+unnecessary. We're throwing our money
+away.
+>> Right. Well, how do you feel?
+>> Well, that I I read that same study and
+thank you for ordering it because it was
+very enlightening. Um, we've given away
+probably over close to $500 million in
+tax credits. U, it's the it's the way
+we've always been used to doing
+business. you feel like you have to give
+something to a company to come to the
+community to provide jobs. Um, and it
+provides some construction jobs. It's
+there's a lot of controversy about how
+many jobs are there after the
+construction's complete, but um there is
+a lot of um unknown about what do we
+really need to do we really need to
+offer any kind of tax incentives. They
+are getting a lot of things here in
+Georgia because we have abundant water.
+we have uh a good network of of power
+generation and we have workers that can
+work. So all of those things make us a
+good place to come without us having to
+give all these tax credits and they're
+just taking advantage of them because
+they're there.
+>> Now Senator Huffedler said he he isn't
+against them. What about you? Are you
+not against them?
+>> Oh no, I they're necessary. We're going
+to have to have them. If you anything we
+do that um with a cell phone to a
+computer, whatever, we're going to have
+to have data centers. But um we need to
+be sure that they are in the right
+location where the resources that the
+data center needs can be provided
+without a hardship to the community.
+>> I know we're hearing so many bills. You
+a few of them are likely to pass, right?
+You're feeling good about it this year,
+>> right? I think there's going to be some
+bills that do pass out. I hope they pass
+out of both the House and the Senate.
+Yeah. But uh
+>> that's the key. They may get the
+crossover day, but they may not go any
+further. Yeah. You feel the good about
+yours, too?
+>> Well, we're hoping that um something
+will move over in the House. There are a
+lot of bills over there that are just
+sitting around waiting, I think, to see
+either what the Senate's going to do or
+how they might be able to combine them.
+>> And I think you may see some bills
+combined. There may be one that looks at
+the tax credits that puts some
+transparency on it, which I fully agree
+with that. So, we'll see.
+>> We'll see. We'll keep up with it.
