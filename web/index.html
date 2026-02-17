@@ -347,7 +347,7 @@
         async function loadData() {
             try {
                 // Load stats
-                const statsRes = await fetch('data/stats.json');
+                const statsRes = await fetch('/data/stats.json');
                 if (statsRes.ok) {
                     const stats = await statsRes.json();
                     document.getElementById('stat-total').textContent = stats.total_videos;
@@ -370,7 +370,7 @@
                 }
                 
                 // Load videos
-                const videosRes = await fetch('data/videos.json');
+                const videosRes = await fetch('/data/videos.json');
                 if (videosRes.ok) {
                     allVideos = await videosRes.json();
                     filteredVideos = allVideos;
