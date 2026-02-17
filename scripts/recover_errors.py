@@ -105,7 +105,10 @@ def main():
     print(f"\n=== Results ===")
     print(f"Recovered: {recovered}")
     print(f"Still failed: {still_failed}")
-    print(f"Recovery rate: {recovered}/{len(errors)} ({100*recovered/len(errors):.1f}%)")
+    if len(errors) > 0:
+        print(f"Recovery rate: {recovered}/{len(errors)} ({100*recovered/len(errors):.1f}%)")
+    else:
+        print(f"Recovery rate: N/A (no errors to recover)")
     
     if recovered > 0:
         print(f"\n{recovered} videos now in TRANSCRIBED status, ready for Nagatha's summarizer!")

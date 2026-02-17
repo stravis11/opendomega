@@ -16,7 +16,18 @@ import json
 import re
 from datetime import datetime
 from typing import Optional, Dict, Any
+from pathlib import Path
 import anthropic
+
+# Load .env file
+env_file = Path(__file__).parent / '.env'
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, value = line.split('=', 1)
+                os.environ[key.strip()] = value.strip()
 
 
 class MockLegislatureDB:
@@ -105,7 +116,7 @@ TRANSCRIPT:
 
     try:
         message = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
+            model="claude-3-haiku-20240307",
             max_tokens=2000,
             system=system_prompt,
             messages=[{"role": "user", "content": user_prompt}]

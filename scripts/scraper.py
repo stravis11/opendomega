@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Georgia Legislature Video Scraper
-Extracts YouTube URLs from House and Senate archive pages
+Extracts YouTube URLs from House and Senate archive pages + Vimeo RSS feeds
+Writes to Supabase for distributed processing
 """
 
 import re
@@ -12,6 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from urllib.request import urlopen, Request
 from html.parser import HTMLParser
+from vimeo_scraper import scrape_vimeo
+from supabase_client import LegislatureDB
 
 # Archive page URLs
 SOURCES = {
@@ -161,8 +164,8 @@ def init_database():
     return conn
 
 
-def save_video(conn: sqlite3.Connection, video: dict, year: int):
-    """Save video to database, skip if exists"""
+def save_video(conn: sqlite3.Connection, video: dict, year: int, db: LegislatureDB = None):
+    """Save video to database (Supabase primary, SQLite fallback), skip if exists"""
     cursor = conn.cursor()
     
     # Build date string if we have month and day
@@ -174,6 +177,31 @@ def save_video(conn: sqlite3.Connection, video: dict, year: int):
         except ValueError:
             pass
     
+    # Build record for insertion
+    video_record = {
+        "video_id": video["video_id"],
+        "url": video["url"],
+        "chamber": video["chamber"],
+        "session_type": video["session_type"],
+        "session_year": year,
+        "day_number": video["day_number"],
+        "video_date": video_date,
+        "part": video["part"],
+        "time_of_day": video["time_of_day"],
+        "source": video["source"],
+        "status": "pending"
+    }
+    
+    # Try to insert into Supabase first
+    is_new = False
+    if db:
+        try:
+            result = db.client.table('legislature_videos').insert(video_record, upsert=True).execute()
+            is_new = bool(result.data)
+        except Exception as e:
+            print(f"  Supabase insert error: {e}")
+    
+    # Also save to local SQLite for reference
     try:
         cursor.execute("""
             INSERT OR IGNORE INTO videos 
@@ -194,9 +222,9 @@ def save_video(conn: sqlite3.Connection, video: dict, year: int):
             video["text"]
         ))
         conn.commit()
-        return cursor.rowcount > 0  # True if inserted, False if existed
+        return cursor.rowcount > 0 or is_new  # True if inserted to either DB
     except sqlite3.IntegrityError:
-        return False
+        return is_new
 
 
 def scrape_youtube_channel(channel_url: str, source_name: str, limit: int = 100) -> list[dict]:
@@ -260,9 +288,75 @@ def scrape_youtube_channel(channel_url: str, source_name: str, limit: int = 100)
 
 
 def scrape_all(years: list[int] = None) -> dict:
-    """Scrape all sources and save to database"""
-    conn = init_database()
-    results = {"new": 0, "existing": 0, "errors": []}
+    """Scrape all sources (YouTube + Vimeo) and save to Supabase"""
+    conn = init_database()  # Keep SQLite for local reference
+    db = LegislatureDB()  # Use Supabase for primary database
+    results = {"new": 0, "existing": 0, "errors": [], "youtube": 0, "vimeo": 0}
+    
+    # Scrape Vimeo RSS feeds (fastest - do this first)
+    print("\n=== VIMEO SOURCES ===")
+    try:
+        vimeo_videos = scrape_vimeo()
+        print(f"Found {len(vimeo_videos)} Vimeo videos")
+        
+        for video in vimeo_videos:
+            if not video["video_id"]:
+                continue
+            
+            # Build Supabase-compatible record
+            vimeo_id = video["video_id"]
+            try:
+                # Insert into Supabase
+                video_record = {
+                    "video_id": f"vimeo_{vimeo_id}",
+                    "url": f"https://vimeo.com/{vimeo_id}",
+                    "title": video["title"],
+                    "chamber": video["chamber"],
+                    "session_type": "regular",
+                    "session_year": video.get("session_year", datetime.now().year),
+                    "day_number": video.get("day_number"),
+                    "source": "vimeo",
+                    "status": "pending"
+                }
+                
+                # Use supabase_client to insert (upsert handles duplicates)
+                result = db.client.table('legislature_videos').insert(video_record, upsert=True).execute()
+                
+                if result.data:
+                    results["new"] += 1
+                    results["vimeo"] += 1
+                else:
+                    results["existing"] += 1
+                    
+                # Also save to local SQLite for reference
+                cursor = conn.cursor()
+                cursor.execute("""
+                    INSERT OR IGNORE INTO videos 
+                    (video_id, url, title, chamber, session_type, session_year, 
+                     day_number, source, raw_text, status)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    f"vimeo_{vimeo_id}",
+                    f"https://vimeo.com/{vimeo_id}",
+                    video["title"],
+                    video["chamber"],
+                    "regular",
+                    video.get("session_year", datetime.now().year),
+                    video.get("day_number"),
+                    "vimeo",
+                    video["title"],
+                    "pending"
+                ))
+                conn.commit()
+            except Exception as e:
+                if "duplicate" not in str(e).lower():
+                    results["errors"].append(f"Vimeo insert: {str(e)}")
+                    print(f"  Error inserting {vimeo_id}: {e}")
+                else:
+                    results["existing"] += 1
+    except Exception as e:
+        results["errors"].append(f"Vimeo scrape: {str(e)}")
+        print(f"  Error: {e}")
     
     # Scrape HTML archive pages (House)
     for source_name, url in SOURCES.items():
@@ -282,7 +376,7 @@ def scrape_all(years: list[int] = None) -> dict:
                 # For now, guess based on date patterns or use current year
                 year = datetime.now().year
                 
-                if save_video(conn, video, year):
+                if save_video(conn, video, year, db):
                     results["new"] += 1
                 else:
                     results["existing"] += 1
@@ -302,7 +396,34 @@ def scrape_all(years: list[int] = None) -> dict:
                 if not video["video_id"]:
                     continue
                 
-                # Save YouTube channel videos
+                # Save YouTube channel videos to Supabase
+                year = video.get("year", datetime.now().year)
+                video_record = {
+                    "video_id": video["video_id"],
+                    "url": video["url"],
+                    "title": video["title"],
+                    "chamber": video["chamber"],
+                    "session_type": video["session_type"],
+                    "session_year": year,
+                    "day_number": video["day_number"],
+                    "source": video["source"],
+                    "status": "pending"
+                }
+                
+                try:
+                    result = db.client.table('legislature_videos').insert(video_record, upsert=True).execute()
+                    if result.data:
+                        results["new"] += 1
+                        results["youtube"] += 1
+                    else:
+                        results["existing"] += 1
+                except Exception as e:
+                    if "duplicate" not in str(e).lower():
+                        results["errors"].append(f"YouTube channel insert: {str(e)}")
+                    else:
+                        results["existing"] += 1
+                
+                # Also save to local SQLite for reference
                 cursor = conn.cursor()
                 try:
                     cursor.execute("""
@@ -316,18 +437,14 @@ def scrape_all(years: list[int] = None) -> dict:
                         video["title"],
                         video["chamber"],
                         video["session_type"],
-                        video.get("year", datetime.now().year),
+                        year,
                         video["day_number"],
                         video["source"],
                         video["title"]
                     ))
                     conn.commit()
-                    if cursor.rowcount > 0:
-                        results["new"] += 1
-                    else:
-                        results["existing"] += 1
                 except sqlite3.IntegrityError:
-                    results["existing"] += 1
+                    pass
                     
         except Exception as e:
             results["errors"].append(f"{source_name}: {str(e)}")

@@ -1,0 +1,10 @@
+/Users/steve/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/steve/.openclaw/workspace/opendomega/transcriber.py", line 244, in <module>
+    main()
+  File "/Users/steve/.openclaw/workspace/opendomega/transcriber.py", line 208, in main
+    db = LegislatureDB()
+  File "/Users/steve/.openclaw/workspace/opendomega/supabase_client.py", line 42, in __init__
+    raise ValueError("SUPABASE_KEY environment variable required")
+ValueError: SUPABASE_KEY environment variable required
